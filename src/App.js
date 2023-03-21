@@ -2,13 +2,20 @@ import React, { useState } from "react";
 import { Button, Modal } from "antd";
 import "./App.css";
 import lzLogo from "./assets/logo/logo1.png";
-import banIcon from "./assets/icon/ban.png";
+import { Checkbox } from "antd";
+import { CheckboxChangeEvent } from "antd/es/checkbox";
 
 const App = () => {
     const [isModalOpen, setIsModalOpen] = useState(true);
+    const [isChecked, setIsChecked] = useState(false);
 
     const handleOk = () => {
         setIsModalOpen(false);
+    };
+
+    const onChange = (e) => {
+        if (e.target.checked == false) setIsChecked(false);
+        if (e.target.checked == true) setIsChecked(true);
     };
 
     return (
@@ -32,14 +39,34 @@ const App = () => {
                 width={800}
                 closable={false}
                 footer={[
-                    <Button
-                        className="continue_button"
-                        key="submit"
-                        type="primary"
-                        onClick={handleOk}
-                    >
-                        Continue
-                    </Button>,
+                    <div className="main_logo">
+                        <Checkbox className="checkbox" onChange={onChange}>
+                            I have read and accept the Terms of use
+                        </Checkbox>
+                    </div>,
+                    <div className="main_logo">
+                        {isChecked == false && (
+                            <Button
+                                className="disable_button"
+                                key="submit"
+                                type="primary"
+                                onClick={handleOk}
+                                disabled
+                            >
+                                Continue
+                            </Button>
+                        )}
+                        {isChecked == true && (
+                            <Button
+                                className="continue_button"
+                                key="submit"
+                                type="primary"
+                                onClick={handleOk}
+                            >
+                                Continue
+                            </Button>
+                        )}
+                    </div>,
                 ]}
             >
                 <div className="modal_info">
@@ -373,15 +400,21 @@ const App = () => {
                                 Privacy Policy. We do not sell or lease the
                                 personal data that we have collected (and will
                                 not do so without providing a right to opt out).
-                                9.1 Applicability of this Policy This Policy
-                                applies to our services, which include the
-                                services we provide on any other websites,
-                                pages, features, or content we own or operating
-                                third party applications relying on such an API,
-                                and related services. 9.2 Safety and Security We
-                                may use acquired information to help maintain
-                                the safety, security, and integrity of you and
-                                our services, including:
+                                <h3>9.1 Applicability of this Policy</h3>{" "}
+                                <p>
+                                    This Policy applies to our services, which
+                                    include the services we provide on any other
+                                    websites, pages, features, or content we own
+                                    or operating third party applications
+                                    relying on such an API, and related
+                                    services.
+                                </p>{" "}
+                                <h3>9.2 Safety and Security</h3>{" "}
+                                <p>
+                                    We may use acquired information to help
+                                    maintain the safety, security, and integrity
+                                    of you and our services, including:
+                                </p>
                             </p>
                             <h2>10. DISCLAIMER</h2>
                             <p>

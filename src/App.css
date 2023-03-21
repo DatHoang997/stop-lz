@@ -45,7 +45,7 @@
 .modal_info {
     color: black;
     background-color: rgb(225, 222, 222);
-    border-radius: 7px;
+    border-radius: 15px;
     height: 400px;
     background-color: #181818;
 }
@@ -55,15 +55,31 @@
     font-size: 0.9rem;
     background-color: #181818;
     color: white;
-    border-radius: 10px;
+    border-radius: 15px;
+    /* padding: 5px; */
+    margin: 5px;
 }
 
 .continue_button {
+    margin-top: 15px;
     background-color: rgb(71, 167, 58);
 }
+
+.disable_button {
+    margin-top: 15px;
+    background-color: hsla(0,0%,50.2%,.4);
+    color: white
+}
+
+.ant-btn-primary:disabled {
+    background-color: hsla(0,0%,50.2%,.4);
+    color: white;
+  }
+
 .ant-modal {
     font-family: "Montserrat-Medium", sans-serif;
 }
+
 .ant-modal .ant-modal-title {
     font-size: 1.7rem;
     background-color: #242424;
@@ -105,4 +121,8 @@
 
 .ant-modal .ant-modal-content {
     background-color: #242424;
+}
+
+.checkbox {
+    color: white;
 }
