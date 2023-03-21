@@ -16,16 +16,14 @@ const App = () => {
             <div className="main_logo">
                 <img src={lzLogo} className="logo1" />
             </div>
-            <div className="main_logo">
-                <img src={banIcon} className="ban_icon" />
-            </div>
-            <div className="main_logo">
-                <div className="text">
-                    <p className="line">
-                        Conveniently keep your assets safe and accessible in our
-                        multi-platform cross-chain wallet
-                    </p>
-                </div>
+            <div className="text">
+                <p className="line">
+                    LZ Finance has been dissolved and all the dapps have been
+                    closed.
+                </p>
+                <p className="line">
+                    Thank you all for your supports over the periods.
+                </p>
             </div>
             <Modal
                 className="modal"
